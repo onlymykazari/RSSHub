@@ -1,4 +1,4 @@
-name = "rsshub"
+name = 'rsshub-cf-worker'
 main = "dist-worker/worker.mjs"
 compatibility_date = "2025-06-17"
 compatibility_flags = ["nodejs_compat"]
