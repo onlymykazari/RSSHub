@@ -4,7 +4,7 @@ import { getSubPath } from '@/utils/common-utils';
 import { parseArticle, parseNewsList, rootUrl } from './utils';
 
 export const route: Route = {
-    path: '/ccdi/*',
+    path: '/ccdi/:subPath{.+}?',
     name: 'Unknown',
     maintainers: [],
     handler,
