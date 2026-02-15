@@ -279,6 +279,9 @@ export type RoutePath =
   | `/bast*`
   | `/bbc/:site?/:channel?`
   | `/bbc/learningenglish/:channel?`
+  | `/bbc/sport/:sport`
+  | `/bbc/topics/:topic`
+  | `/bbc/zhongwen/topics/:topic/:variant?`
   | `/bbcnewslabs/news`
   | `/bc3ts/post/list/:sort?`
   | `/bdys/:caty?/:type?/:area?/:year?/:order?`
@@ -2734,6 +2737,7 @@ export type RoutePath =
   | `/thepaper/channel/:id`
   | `/thepaper/factpaper/:status?`
   | `/thepaper/featured`
+  | `/thepaper/gov/:pphId`
   | `/thepaper/list/:id`
   | `/thepaper/sidebar/:sec?`
   | `/thepaper/user/:pphId`
