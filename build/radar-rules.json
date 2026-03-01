@@ -1931,6 +1931,19 @@
       }
     ]
   },
+  "4chan.org": {
+    "_name": "4chan",
+    "boards": [
+      {
+        "title": "Board's catalog",
+        "docs": "https://docs.rsshub.app/routes/bbs",
+        "source": [
+          "/:board/"
+        ],
+        "target": "/4chan/:board/catalog"
+      }
+    ]
+  },
   "4gamers.com.tw": {
     "_name": "4Gamers",
     "www": [
@@ -4833,12 +4846,13 @@
   },
   "ainvest.com": {
     "_name": "AInvest",
-    ".": [
+    "www": [
       {
         "title": "Latest Article",
         "docs": "https://docs.rsshub.app/routes/finance",
         "source": [
-          "/news"
+          "/news/articles-latest/",
+          "/"
         ],
         "target": "/ainvest/article"
       },
@@ -4846,7 +4860,7 @@
         "title": "Latest News",
         "docs": "https://docs.rsshub.app/routes/finance",
         "source": [
-          "/news"
+          "/news/"
         ],
         "target": "/ainvest/news"
       }
@@ -12525,6 +12539,27 @@
           "/:id/"
         ],
         "target": "/colamanga/:id"
+      }
+    ]
+  },
+  "comic-fuz.com": {
+    "_name": "COMIC FUZ",
+    ".": [
+      {
+        "title": "杂志详情",
+        "docs": "https://docs.rsshub.app/routes/anime",
+        "source": [
+          "/magazine/:id"
+        ],
+        "target": "/comic-fuz/magazine/:id"
+      },
+      {
+        "title": "漫画详情",
+        "docs": "https://docs.rsshub.app/routes/anime",
+        "source": [
+          "/manga/:id"
+        ],
+        "target": "/comic-fuz/manga/:id"
       }
     ]
   },
@@ -28308,6 +28343,19 @@
           "/u/:handle"
         ],
         "target": "/lens/profile/:handle"
+      }
+    ]
+  },
+  "lephoceen.fr": {
+    "_name": "Le Phocéen",
+    ".": [
+      {
+        "title": "Fil Info Le Phocéen (Chrono)",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/chrono"
+        ],
+        "target": "/lephoceen/chrono"
       }
     ]
   },
