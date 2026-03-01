@@ -66126,6 +66126,33 @@
         "location": "index.ts",
         "module": "() => import('@/routes/iwara/index.ts')"
       },
+      "/ranking/:type?/:sort?/:rating?": {
+        "path": "/ranking/:type?/:sort?/:rating?",
+        "example": "/iwara/ranking/video/date/ecchi",
+        "parameters": {
+          "type": "Content type, can be video or image, default is video",
+          "sort": "Sort type, can be date, trending, popularity, views, likes, default is date",
+          "rating": "Rating, can be all, general, ecchi, default is ecchi"
+        },
+        "name": "Ranking",
+        "maintainers": [
+          "CaoMeiYouRen233"
+        ],
+        "features": {
+          "requirePuppeteer": true,
+          "nsfw": true
+        },
+        "radar": [
+          {
+            "source": [
+              "www.iwara.tv/videos",
+              "www.iwara.tv/images"
+            ]
+          }
+        ],
+        "location": "ranking.ts",
+        "module": "() => import('@/routes/iwara/ranking.ts')"
+      },
       "/subscriptions": {
         "path": "/subscriptions",
         "categories": [
@@ -66171,7 +66198,7 @@
     },
     "name": "iwara",
     "apiRoutes": {},
-    "url": "ecchi.iwara.tv",
+    "url": "www.iwara.tv",
     "lang": "en"
   },
   "ixigua": {
