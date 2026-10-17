@@ -4,6 +4,7 @@ import pMap from 'p-map';
 import type { DataItem, Route } from '@/types';
 import cache from '@/utils/cache';
 import ofetch from '@/utils/ofetch';
+import { getRouteLimit } from '@/utils/route-limit';
 
 export const route: Route = {
     path: '/news',
@@ -25,7 +26,7 @@ async function handler(ctx) {
     const link = 'https://www.anthropic.com/news';
     const response = await ofetch(link);
     const $ = load(response);
-    const limit = ctx.req.query('limit') ? Number.parseInt(ctx.req.query('limit'), 10) : 10;
+    const limit = getRouteLimit(ctx, 10);
 
     const list: DataItem[] = $('[class^="PublicationList-module-scss-module__"][class$="__list"] a')
         .toArray()
@@ -65,7 +66,7 @@ async function handler(ctx) {
                     }
                 });
 
-                item.description = content.html() ?? undefined;
+                item.description = content.html();
 
                 return item;
             }),
