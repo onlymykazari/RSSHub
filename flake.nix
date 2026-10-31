@@ -12,12 +12,12 @@
       # Helper to define the RSSHub package
       makeRSSHub = pkgs:
         let
-          pnpm = pkgs.pnpm_10;
-          deps = pnpm.fetchDeps {
+          pnpm = pkgs.pnpm_12;
+          deps = pkgs.fetchPnpmDeps {
             pname = "rsshub";
             src = ./.;
-            hash = "sha256-QG1cIkZh+qBA5Dipt0iDLuQpEOI45wdFhuG/CTcRVU8=";
-            fetcherVersion = 2;
+            hash = "sha256-CbWoSO65A2v9pUVZNcRFROIsZG/mXCKotfDo1kzShrU=";
+            fetcherVersion = 4;
           };
         in
         pkgs.stdenv.mkDerivation rec {
@@ -27,8 +27,9 @@
           src = ./.;
 
           nativeBuildInputs = with pkgs; [
-            nodejs_22
-            pnpm.configHook
+            nodejs_26
+            pnpm
+            pnpmConfigHook
             git
           ];
 
@@ -81,7 +82,7 @@
           #!${pkgs.bash}/bin/bash
           export NODE_ENV=production
           export NODE_OPTIONS='--max-http-header-size=32768'
-          exec ${pkgs.nodejs_22}/bin/node $out/lib/rsshub/dist/index.mjs "\$@"
+          exec ${pkgs.nodejs_26}/bin/node $out/lib/rsshub/dist/index.mjs "\$@"
           EOF
           chmod +x $out/bin/rsshub
           runHook postInstall
