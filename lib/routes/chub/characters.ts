@@ -1,8 +1,7 @@
-import MarkdownIt from 'markdown-it';
-
 import type { Route } from '@/types';
+import MarkdownIt from '@/utils/markdown-it';
 import ofetch from '@/utils/ofetch';
-import { parseDate } from '@/utils/parse-date';
+import { parseDate } from '@/utils/time';
 
 const md = MarkdownIt({
     breaks: true,
@@ -71,7 +70,7 @@ async function handler() {
             link: `${hostURL}/${item.fullPath}`,
             author: String(item.fullPath.split('/', 1)),
             enclosure_url: item.max_res_url,
-            enclosure_type: `image/png`,
+            enclosure_type: 'image/png',
             category: item.topics,
         })),
     };
